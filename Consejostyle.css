@@ -1,0 +1,362 @@
+/* ===== Paleta cafés y amarillos ===== */
+:root {
+  --primary-color: #b38b6d;
+  --secondary-color: #f2d398;
+  --accent-color: #e6c49f;
+  --text-color: #4a3c31;
+  --btn-color: #d9a066;
+  --btn-hover: #c78c4d;
+  --accordion-bg: #f5e4d7;
+  --accordion-hover: #ecd5b8;
+}
+
+/* ===== Estilos generales ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  text-align: center;
+  padding: 50px 20px;
+  background: var(--primary-color);
+  color: white;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+.hero-cta {
+  margin-top: 18px;
+}
+
+.btn-cta {
+  display: inline-block;
+  background: #ffffff;
+  color: var(--text-color);
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn-cta:hover { transform: translateY(-1px); }
+
+/* ===== Contenedor principal ===== */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+/* ===== Filtros ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.chip {
+  background: #fff;
+  border: 2px solid var(--btn-color);
+  color: var(--text-color);
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.chip:hover { background: var(--accordion-hover); transform: translateY(-1px); }
+.chip.active { background: var(--btn-color); color: #fff; }
+
+
+/* ===== Acordeón estilo libro ===== */
+.accordion-item {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.accordion-btn {
+  width: 100%;
+  background: var(--accordion-bg);
+  border: none;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  position: relative;
+  padding-right: 56px;
+}
+
+.accordion-btn:hover {
+  background: var(--accordion-hover);
+  transform: scale(1.02);
+}
+
+.accordion-btn::after {
+  content: '▾';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.open .accordion-btn {
+  background: var(--accordion-hover);
+}
+
+.accordion-item.open .accordion-btn::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #fffaf0;
+  padding: 0 20px;
+}
+
+.accordion-content ul {
+  padding: 15px 0;
+  margin: 0;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.accordion-content ul li {
+  margin: 6px 0;
+}
+
+.accordion-content img {
+  width: 100%;
+  max-width: 350px;
+  display: block;
+  margin: 15px auto 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== Checklist ===== */
+.checklist {
+  background: #fffaf0;
+  border: 1px solid var(--accent-color);
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.checklist h2 { margin-top: 0; }
+.btn-outline {
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--btn-color);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-outline:hover { background: var(--accordion-hover); }
+
+/* ===== Quick links ===== */
+.quick-links { display: flex; gap: 12px; margin: 18px 0 8px; flex-wrap: wrap; }
+.btn-link {
+  background: var(--btn-color);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* ===== FAQ ===== */
+.faq { margin: 24px 0; }
+.faq details { background: #fff; border-radius: 12px; padding: 10px 12px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.faq summary { cursor: pointer; font-weight: 700; }
+
+/* ===== Botón de regreso ===== */
+.btn-back {
+  display: block;
+  width: 180px;
+  margin: 30px auto;
+  padding: 12px;
+  text-align: center;
+  background: var(--btn-color);
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-back:hover {
+  background: var(--btn-hover);
+  transform: scale(1.05);
+}
+
+.btn-back:focus-visible,
+.accordion-btn:focus-visible,
+#btn-flotante:focus-visible,
+#chatbot button:focus-visible,
+#chatbot input[type="text"]:focus-visible {
+  outline: 3px solid var(--btn-color);
+  outline-offset: 3px;
+}
+
+/* ===== Botón flotante volver al inicio ===== */
+#btn-flotante {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--btn-color);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+#btn-flotante:hover {
+  background-color: var(--btn-hover);
+  transform: scale(1.1);
+}
+
+
+/* ===== Chatbot burbuja ===== */
+#chatbot-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--btn-color);
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.2s;
+}
+
+#chatbot-bubble:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Chatbot cuadro ===== */
+#chatbot {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 340px;
+  max-width: 90%;
+  background-color: var(--accordion-bg);
+  border: 2px solid var(--btn-color);
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+/* ===== Clase que hace visible el chatbot ===== */
+.visible {
+  display: block !important;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#chat-messages {
+  border: 1px solid var(--btn-color);
+  padding: 10px;
+  height: 280px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+#chatbot input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--btn-color);
+}
+
+#chatbot button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--btn-color);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#chatbot button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95rem;
+  margin-top: 50px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  header h1 { font-size: 2rem; }
+  .accordion-btn { font-size: 1.3rem; padding: 15px; }
+  .accordion-content img { max-width: 100%; }
+  .btn-back { width: 80%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+

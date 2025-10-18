@@ -1,0 +1,320 @@
+/* ===== Estilos Generales ===== */
+:root {
+    --primary-color: #8B5E3C;
+    --secondary-color: #FFD166;
+    --accent-color: #FFF3E0;
+    --text-color: #5C4033;
+    --btn-color: #d9a066;
+    --btn-hover: #c78c4d;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    margin: 0;
+    padding-top: 78px; /* espacio para menú fijo */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ===== Buscador ===== */
+.vet-search {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.vet-search .form-control {
+    border-radius: 14px;
+    padding: 12px 14px;
+    border: 1px solid var(--btn-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Encabezados principales */
+.container h2 {
+    color: var(--primary-color);
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-top: 10px;
+}
+
+/* ===== Menú Fijo ===== */
+.navbar {
+    background: linear-gradient(90deg, var(--primary-color) 0%, #7a5335 50%, var(--primary-color) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 14px 0;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar .navbar-brand {
+    color: #fff !important;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    font-size: 1.4rem;
+}
+
+.navbar a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.25s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+/* Estado activo del enlace del menú */
+.navbar .nav-link.active,
+.navbar .nav-link:focus {
+    background-color: rgba(255,255,255,0.22);
+    color: #fff !important;
+}
+
+/* Toggler (menú móvil) */
+.navbar .navbar-toggler {
+    border-color: rgba(255,255,255,0.55);
+    border-width: 2px;
+    padding: .45rem .7rem;
+    border-radius: 10px;
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.35);
+}
+
+.navbar .navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+}
+
+/* ===== Tarjetas ===== */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+.card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.03);
+}
+
+.card .card-body {
+    padding: 18px 20px;
+}
+
+.card .card-title {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.card .card-text {
+    color: var(--text-color);
+}
+
+.map-embed {
+    width: 100%;
+    height: 220px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    margin-top: 10px;
+}
+
+/* ===== Botones ===== */
+.btn, .btn-appointment, .btn-confirm {
+    display: inline-block;
+    text-align: center;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Botón general */
+.btn {
+    background: var(--btn-color);
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+    transform: scale(1.08);
+}
+
+.btn:focus-visible {
+    outline: 3px solid rgba(255, 209, 102, 0.45);
+    outline-offset: 2px;
+}
+
+/* Botón de cita - rosa pastel */
+.btn-appointment {
+    background: var(--btn-color) !important;
+}
+
+.btn-appointment:hover {
+    background: var(--btn-hover) !important;
+    transform: scale(1.08);
+}
+
+/* Botón de confirmación */
+.btn-confirm {
+    background: var(--btn-color);
+}
+
+.btn-confirm:hover {
+    background: var(--btn-hover);
+    transform: scale(1.08);
+}
+
+/* Botón secundario (enlace Volver al inicio) */
+.btn-secondary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #724a2f;
+    border-color: #724a2f;
+    color: #fff;
+}
+
+/* ===== Formulario ===== */
+.appointment-form {
+    display: none;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    margin-top: 20px;
+}
+
+.appointment-form label {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.appointment-form .form-control,
+.appointment-form select {
+    margin-top: 6px;
+    border-radius: 12px;
+    border: 1px solid var(--btn-color);
+    padding: 10px 12px;
+}
+
+.appointment-form .btn-confirm {
+    width: 100%;
+}
+
+/* Mejor foco en campos de formulario (Bootstrap) */
+.appointment-form .form-control:focus,
+.appointment-form select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 209, 102, 0.35);
+}
+
+/* ===== Footer ===== */
+footer {
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+/* ===== Animaciones ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .appointment-form {
+        padding: 16px;
+    }
+}
+
+
+

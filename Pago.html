@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagar suscripción</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffe5ec, #fff5e4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fffdfb;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    h2 { color: #d16d86; margin-bottom: 20px; }
+    p { color: #6c4c4c; font-size: 16px; }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #fbb1bd;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover { background-color: #f89cab; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Tu prueba gratuita ha terminado</h2>
+    <p>Para seguir disfrutando de nuestras funciones premium, realiza el pago de tu suscripción.</p>
+    <button id="payBtn">Pagar ahora</button>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+    import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+    // 🔥 Nueva configuración Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCBuqWPlOs6rW7bHenhDXSatHiimSI_JQI",
+      authDomain: "acceso-a-clientes-3d5c8.firebaseapp.com",
+      projectId: "acceso-a-clientes-3d5c8",
+      storageBucket: "acceso-a-clientes-3d5c8.firebasestorage.app",
+      messagingSenderId: "313567830869",
+      appId: "1:313567830869:web:7299d327b4b8cfa7a945dc"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "Formulario de ingreso.html";
+      }
+    });
+
+    document.getElementById("payBtn").addEventListener("click", async () => {
+      const user = auth.currentUser;
+      if (!user) {
+        alert("Debes iniciar sesión primero.");
+        window.location.href = "Formulario de ingreso.html";
+        return;
+      }
+      try {
+        const userDocRef = doc(db, "users", user.uid);
+        await updateDoc(userDocRef, { "subscription.active": true });
+        alert("¡Pago confirmado! Ahora tienes acceso completo.");
+        window.location.href = "index.html";
+      } catch (error) {
+        alert("Error al actualizar la suscripción: " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>

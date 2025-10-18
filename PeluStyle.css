@@ -1,0 +1,262 @@
+/* ===== Estilos Generales ===== */
+:root {
+  --primary-color: #8B5E3C;
+  --secondary-color: #FFD166;
+  --accent-color: #FFF3E0;
+  --text-color: #5C4033;
+  --btn-color: #d9a066;
+  --btn-hover: #c78c4d;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 70px;
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+}
+
+/* ===== Hero ===== */
+.pelu-hero {
+  background: linear-gradient(135deg, rgba(139,94,60,0.9), rgba(217,160,102,0.8)), url('P1.jpg') center/cover no-repeat;
+  color: #fff;
+  padding: 80px 0;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.pelu-hero h1 { font-weight: 800; letter-spacing: .3px; }
+.pelu-hero p { margin: 8px 0 16px; font-weight: 500; }
+.btn-cta {
+  display: inline-block;
+  background: #fff;
+  color: var(--primary-color);
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+.btn-cta:hover { background: #FFF8F0; }
+
+/* ===== Menú Fijo ===== */
+.navbar {
+  background: var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px 20px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #FFF8F0 !important;
+  font-size: 1.3rem;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  background-color: rgba(255,255,255,0.16);
+  color: #ffffff !important;
+  transform: scale(1.03);
+}
+
+/* Estilo en menú móvil */
+.navbar-collapse {
+  background: var(--primary-color);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* Toggler icon and border contrast */
+.navbar .navbar-toggler {
+  border-color: rgba(255,255,255,0.7);
+}
+.navbar .navbar-toggler-icon {
+  filter: invert(1) brightness(2);
+}
+
+/* ===== Tarjetas de Servicio ===== */
+.service-card {
+  margin: 15px;
+  background-color: var(--accent-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.service-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  color: var(--primary-color);
+  margin: 15px 10px 5px 10px;
+}
+
+.service-card p {
+  color: var(--text-color);
+}
+
+.service-card .btn {
+  display: block;
+  margin: 10px auto 15px auto;
+  background-color: var(--btn-color);
+  border: none;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.service-card .btn:hover {
+  background-color: var(--btn-hover);
+  color: #fff;
+}
+
+/* Badges de servicios */
+.badges { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 6px; }
+.badge-soft {
+  background: #fff;
+  border: 1.5px solid var(--btn-color);
+  color: var(--text-color);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* ===== Sección de Reserva ===== */
+.booking-section {
+  background-color: var(--accent-color);
+  padding: 40px 20px;
+  border-radius: 12px;
+  display: none; /* activarlo con JS */
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.booking-section h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Mejora visual del formulario */
+.booking-section .form-label {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.booking-section .form-control,
+.booking-section .form-select {
+  border: 1.5px solid var(--btn-color);
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+.booking-section .form-control:focus,
+.booking-section .form-select:focus {
+  border-color: var(--btn-hover);
+  box-shadow: 0 0 0 0.2rem rgba(199, 140, 77, 0.25);
+}
+.booking-section .btn-primary {
+  background: var(--btn-color);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+.booking-section .btn-primary:hover {
+  background: var(--btn-hover);
+}
+.booking-section h2 span#peluqueriaName {
+  color: var(--btn-color);
+}
+
+/* Aparición suave cuando se muestra */
+.booking-section.showing {
+  animation: fadeInUp 0.35s ease-out;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive refinements */
+@media (max-width: 576px) {
+  .booking-section { padding: 28px 16px; }
+}
+
+/* ===== Precios ===== */
+.pricing { margin: 20px auto 30px; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.pricing-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.pricing-card h3 { margin: 0 0 6px; color: var(--primary-color); }
+.pricing-card .price { font-weight: 800; color: var(--text-color); margin-bottom: 8px; }
+.pricing-card ul { padding-left: 18px; margin: 0; }
+.pricing-card.featured { border: 2px solid var(--btn-color); transform: translateY(-2px); }
+
+/* ===== Galería ===== */
+.gallery { margin: 10px auto 35px; }
+.gallery img { border-radius: 14px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .pricing-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 576px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== Pie de Página ===== */
+footer {
+  background: var(--primary-color);
+  color: #FFF8F0;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+

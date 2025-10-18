@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergencias para Mascotas</title>
+    <link rel="stylesheet" href="Primeros.css">
+    <link rel="icon" href="WhatsApp Image 2025-06-07 at 7.07.07 PM.jpeg">
+</head>
+<body>
+    <header class="header">
+        <h1>Emergencias para Mascotas</h1>
+    </header>
+
+    <main>
+        <section class="selector-mascotas" id="selector">
+            <h2>Selecciona tu mascota</h2>
+            <div class="mascotas-grid">
+                <div class="mascota" onclick="scrollToSection('perros')">
+                    <img src="P.jpg" alt="Perros">
+                    <span>Perros</span>
+                </div>
+                <div class="mascota" onclick="scrollToSection('gatos')">
+                    <img src="G.jpg" alt="Gatos">
+                    <span>Gatos</span>
+                </div>
+                <div class="mascota" onclick="scrollToSection('conejos')">
+                    <img src="C.jpg" alt="Conejos">
+                    <span>Conejos</span>
+                </div>
+                <div class="mascota" onclick="scrollToSection('loros')">
+                    <img src="Loro.jpg" alt="Loros">
+                    <span>Loros</span>
+                </div>
+                <div class="mascota" onclick="scrollToSection('gallinas')">
+                    <img src="Gallina.jpg" alt="Gallinas">
+                    <span>Gallinas</span>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="perros" class="consejos">
+            <h2>Perros 🐶</h2>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-btn">Consejos generales</button>
+                <div class="accordion-content">
+                  <ul>
+                    <li>Control de heridas: Lava cortes con agua limpia y aplica antiséptico. Cubre con gasa estéril.</li>
+                    <li>RCP: Si no respira ni tiene pulso, compresiones torácicas a 100-120 por minuto.</li>
+                    <li>Intoxicaciones: Lleva el envase del producto al veterinario y sigue indicaciones.</li>
+                  </ul>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                  <button class="btn-call-vet" onclick="callVet()">Llamar al veterinario</button>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Atragantamiento</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Evalúa si respira/tose. No metas los dedos a ciegas.</li>
+                    <li>Si es visible y accesible, retira el objeto con cuidado.</li>
+                    <li>Si no respira: maniobra de Heimlich canina (perros medianos/grandes) o compresiones torácicas suaves (pequeños).</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                  <button class="btn-call-vet" onclick="callVet()">Llamar al veterinario</button>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Golpe de calor</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Lleva a sombra y ventila. Humedece cuello, ingles y axilas con agua fresca (no helada).</li>
+                    <li>Ofrece pequeños sorbos de agua si está consciente.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Hemorragias</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Presión directa con gasa 5–10 min sin retirar.</li>
+                    <li>Eleva la zona si es posible y vendaje firme sin cortar circulación.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Convulsiones</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Retira objetos alrededor, baja estímulos. Cronometra la duración.</li>
+                    <li>Tras la crisis, mantén en lugar fresco y tranquilo.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Intoxicaciones</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Identifica el tóxico, retira acceso. No induzcas vómito sin indicación.</li>
+                    <li>Lava piel/ojos con agua si es contacto. Contacta a tu veterinaria.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section id="gatos" class="consejos">
+            <h2>Gatos 🐱</h2>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-btn">Consejos generales</button>
+                <div class="accordion-content">
+                  <ul>
+                    <li>Heridas y hemorragias: Limpia con antiséptico y aplica presión si sangra.</li>
+                    <li>RCP felina: Boca a hocico y compresiones torácicas controladas.</li>
+                    <li>Asfixia: Retira objetos con cuidado o maniobra de Heimlich felina.</li>
+                  </ul>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                  <button class="btn-call-vet" onclick="callVet()">Llamar al veterinario</button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-btn">Obstrucción urinaria</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Si hay esfuerzo por orinar, maullidos, abdomen doloroso: urgencia.</li>
+                    <li>No administres medicamentos humanos.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Atragantamiento</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Evalúa respiración. No introducir dedos a ciegas.</li>
+                    <li>Compresiones torácicas suaves si no respira.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Intoxicaciones</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Retira el tóxico. No induzcas vómito. Llama a tu veterinaria.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section id="conejos" class="consejos">
+            <h2>Conejos 🐇</h2>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-btn">Consejos generales</button>
+                <div class="accordion-content">
+                  <ul>
+                    <li>Heridas: Lava y aplica antiséptico. Presiona con gasa si sangra.</li>
+                    <li>Respiración: Mantén tranquilo y controla temperatura.</li>
+                    <li>Golpe de calor: Lugar fresco y humedecer orejas con agua templada.</li>
+                  </ul>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                  <button class="btn-call-vet" onclick="callVet()">Llamar al veterinario</button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-btn">Golpe de calor</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Ambiente fresco, ventilación y humedecer orejas con agua templada.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Problemas digestivos</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Si deja de comer/defecar, es urgencia. Ofrece heno y agua, evita cambios bruscos de dieta.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section id="loros" class="consejos">
+            <h2>Loros 🦜</h2>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-btn">Consejos generales</button>
+                <div class="accordion-content">
+                  <ul>
+                    <li>Jaula: Amplia, limpia y segura, sin corrientes de aire.</li>
+                    <li>Ejercicio: Vuelo diario y juguetes variados.</li>
+                    <li>Alimentación: Pellets, frutas y verduras, agua fresca.</li>
+                  </ul>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                  <button class="btn-call-vet" onclick="callVet()">Llamar al veterinario</button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-btn">Dificultad respiratoria</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Aísla en lugar templado, evita corrientes y manipulaciones excesivas.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Intoxicaciones</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Retira aerosoles/teflón/humos. Ventila el ambiente.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section id="gallinas" class="consejos">
+            <h2>Gallinas 🐔</h2>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-btn">Consejos generales</button>
+                <div class="accordion-content">
+                  <ul>
+                    <li>Heridas: Desinfectante suave y pomada antibiótica si es necesario.</li>
+                    <li>Hemorragias: Presionar con gasa hasta detener.</li>
+                    <li>Huevos atascados: Baño tibio y lubricación; vigilar evolución.</li>
+                  </ul>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                  <button class="btn-call-vet" onclick="callVet()">Llamar al veterinario</button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-btn">Huevos atascados</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Baño tibio 15–20 min y lubricación suave de cloaca. Mantener en ambiente cálido.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-btn">Parásitos externos</button>
+                <div class="accordion-content">
+                  <ol>
+                    <li>Aislar, limpiar gallinero, aplicar tratamiento indicado por profesional.</li>
+                  </ol>
+                  <a class="btn-to-vet" href="Veterinarias.html">Llevar al veterinario</a>
+                </div>
+              </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Botón flotante volver al inicio -->
+  <a href="index.html" id="btn-flotante">⬅ Inicio</a>
+
+    <!-- Chatbot flotante -->
+    <div id="chatbot-bubble" onclick="toggleChat()">🐾</div>
+    <div id="chatbot">
+        <div id="chat-messages">
+            <p><strong>Bot:</strong> Hola 👋, escribe tu duda sobre primeros auxilios para mascotas.</p>
+        </div>
+        <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+
+    <footer>
+        © 2025 Emergencias Mascotas - Todos los derechos reservados.
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (!section) return;
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const firstAcc = section.querySelector('.accordion .accordion-item');
+            if (firstAcc) {
+                // Cierra otros ítems del mismo acordeón y abre el primero
+                const items = section.querySelectorAll('.accordion .accordion-item');
+                items.forEach(i => i.classList.remove('open'));
+                firstAcc.classList.add('open');
+            }
+        }
+
+        function toggleChat() {
+            document.getElementById('chatbot').classList.toggle('visible');
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById("userInput");
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chat = document.getElementById("chat-messages");
+            chat.innerHTML += `<p><strong>Tú:</strong> ${message}</p>`;
+            input.value = "";
+            chat.scrollTop = chat.scrollHeight;
+
+            try {
+                const response = await fetch("https://chatbot-1-3g9j.onrender.com/api/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                chat.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
+                chat.scrollTop = chat.scrollHeight;
+            } catch (error) {
+                chat.innerHTML += `<p><strong>Bot:</strong> ⚠️ Error al conectar con el servidor</p>`;
+                chat.scrollTop = chat.scrollHeight;
+            }
+        }
+
+        // Filtro simple por palabra clave
+        (function initTipsFilter(){
+            const input = document.getElementById('searchTips');
+            if (!input) return;
+            const blocks = Array.from(document.querySelectorAll('.guia, .consejos'));
+            input.addEventListener('input', () => {
+                const q = input.value.trim().toLowerCase();
+                blocks.forEach(b => {
+                    const text = b.textContent.toLowerCase();
+                    b.style.display = (q === '' || text.includes(q)) ? '' : 'none';
+                });
+            });
+        })();
+
+        // Toggle de acordeón (delegado para todas las secciones)
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.accordion-btn');
+            if (!btn) return;
+            const item = btn.closest('.accordion-item');
+            if (!item) return;
+            const group = item.parentElement; // contenedor .accordion
+            if (group) {
+                Array.from(group.querySelectorAll('.accordion-item')).forEach(i => {
+                    if (i !== item) i.classList.remove('open');
+                });
+            }
+            item.classList.toggle('open');
+        });
+
+        // Botón "Llamar al veterinario": usa número guardado o solicita uno y abre tel:
+        function callVet(){
+            let phone = localStorage.getItem('vet_phone');
+            if (!phone){
+                phone = prompt('Ingresa el número de tu veterinaria de confianza:');
+                if (!phone) return;
+                localStorage.setItem('vet_phone', phone);
+            }
+            window.location.href = 'tel:' + phone.replace(/\s+/g,'');
+        }
+    </script>
+</body>
+</html>
